@@ -29,6 +29,7 @@
 #define CYAN "\033[36m"
 #define BOLD "\033[1m"
 #define BOLD_RED_BLINK "\033[1;5;31m"
+#define BOLD_BLUE_BLINK "\033[1;5;34m"
 
 typedef struct Vehicle {
     int id;
