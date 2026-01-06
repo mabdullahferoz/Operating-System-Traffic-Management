@@ -190,6 +190,8 @@ int main() {
              pthread_mutex_lock(&queue_mutex);
              if (lane_queues[current_lane_idx] != NULL) {
                  v_crossing = remove_vehicle(&lane_queues[current_lane_idx]);
+                 // Apply Aging to others
+                 for(int i=0; i<NUM_LANES; i++) handle_aging(&lane_queues[i]);
              }
              pthread_mutex_unlock(&queue_mutex);
 

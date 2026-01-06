@@ -32,6 +32,8 @@ void* sensor_thread(void* arg) {
 }
 
 // Aging Algorithm: Increment priority of waiting cars
+#define AGING_THRESHOLD 10
+
 void handle_aging(Node** head) {
     Node* temp = *head;
     while (temp != NULL) {
@@ -47,7 +49,8 @@ int has_emergency(int lane_id) {
     if (lane_id < 0 || lane_id >= NUM_LANES) return 0;
     Node* temp = lane_queues[lane_id];
     while(temp != NULL) {
-        if(temp->vehicle.type != REGULAR_CAR) return 1;
+        // Emergency if not regular car OR priority score is high
+        if(temp->vehicle.type != REGULAR_CAR || temp->vehicle.priority_score >= AGING_THRESHOLD) return 1;
         temp = temp->next;
     }
     return 0;

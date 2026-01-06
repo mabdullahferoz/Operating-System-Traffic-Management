@@ -215,14 +215,14 @@ printf(" +------------+----------+-----------------+----------------+\n");
 
 printf("\n");
     // North Lane
+    printf("                    North\n\n");
     printf("                    %s║   ║%s\n", c_n, r);
     printf("                    %s║   ║%s\n", c_n, r);
     printf("                    %s║ | ║%s\n", c_n, r);
     printf("                    %s║ ↓ ║%s\n", c_n, r);
-    printf("                    %s║   ║%s\n", c_n, r);
+    printf("West                %s║   ║%s                East\n", c_n, r);
     
     // Top Row (West Border | North Entry | East Border)
-    // Made wider (20 chars per side) for a better "Smart City" dashboard feel
     printf("    %s════════════════%s%s╝   ╚%s%s════════════════%s\n", c_w, r, c_n, r, c_e, r);
     
     // Middle Row (West Flow | Center | East Flow)
@@ -237,6 +237,7 @@ printf("\n");
     printf("                    %s║ | ║%s\n", c_s, r);
     printf("                    %s║   ║%s\n", c_s, r);
     printf("                    %s║   ║%s\n", c_s, r);
+    printf("\n                    South\n");   
     printf("\n");
     
     printf("\nControls: [1-4] Add Car | [a-d] Add Emergency\n");
